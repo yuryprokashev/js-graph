@@ -1,0 +1,17 @@
+{
+  "name": "js-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "qunit test/*.js"
+  },
+  "author": "Yury Prokashev",
+  "license": "ISC",
+  "devDependencies": {
+    "qunit": "^2.14.1"
+  },
+  "dependencies": {
+    "js-graph": "file:../graph"
+  }
+}
