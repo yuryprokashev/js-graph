@@ -15,6 +15,10 @@ module.exports = function Graph(nodes, edges){
         acc.get(edge.getEndNodeId()).push(edge);
         return acc;
     }, new Map());
+    const edgeMap = edges.reduce(function(acc, edge){
+        acc.set(edge.getId(), edge);
+        return acc;
+    }, new Map())
     this.getNode = function(nodeId){
         return nodeMap.get(nodeId);
     };
@@ -23,5 +27,14 @@ module.exports = function Graph(nodes, edges){
     };
     this.getIncomingEdges = function (nodeId){
         return incomingEdgeMap.get(nodeId);
+    };
+    this.getEdge = function(edgeId){
+        return edgeMap.get(edgeId);
+    };
+    this.toJSON = function (){
+        return {
+            nodes: nodes.map(function(node){return node.toJSON()}),
+            edges: edges.map(function (edge){return edge.toJSON()})
+        }
     };
 }
