@@ -1,0 +1,14 @@
+{
+  "name": "js-graph",
+  "version": "1.0.0",
+  "description": "Graph Library",
+  "main": "main.js",
+  "scripts": {
+    "test": "qunit test/tests.js"
+  },
+  "author": "Yury Prokashev",
+  "license": "ISC",
+  "devDependencies": {
+    "qunit": "^2.14.1"
+  }
+}
