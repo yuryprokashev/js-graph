@@ -15,6 +15,10 @@ module.exports = function Graph(nodes, edges){
         acc.get(edge.getEndNodeId()).push(edge);
         return acc;
     }, new Map());
+    const edgeMap = edges.reduce(function(acc, edge){
+        acc.set(edge.getId(), edge);
+        return acc;
+    }, new Map())
     this.getNode = function(nodeId){
         return nodeMap.get(nodeId);
     };

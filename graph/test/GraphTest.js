@@ -33,4 +33,15 @@ module.exports = function (){
         assert.strictEqual(edges[0].getStartNodeId(), "node-1");
         assert.strictEqual(edges[0].getEndNodeId(), "node-2");
     });
+    QUnit.test("Can provide edge by id", function (assert){
+        const edge = this.graph.getEdge("edge-1");
+        assert.strictEqual(edge.getStartNodeId(), "node-1");
+        assert.strictEqual(edge.getEndNodeId(), "node-2");
+    });
+    QUnit.test("Can be converted to JSON", function (assert){
+        const graphJSON = JSON.stringify(this.graph);
+        const graph = JSON.parse(graphJSON);
+        assert.strictEqual(graph.nodes[0].id, "node-1");
+        assert.strictEqual(graph.edges[0].id, "edge-1");
+    });
 }
