@@ -11,4 +11,12 @@ module.exports = function Edge(id, startNodeId, endNodeId, cost){
     this.getCost = function (){
         return cost ? cost : 0;
     };
+    this.toJSON = function(){
+        return {
+            id: id,
+            startNodeId: startNodeId,
+            endNodeId: endNodeId,
+            cost: cost
+        }
+    }
 }
