@@ -1,5 +1,5 @@
-const Graph = require("../Graph");
-const Edge = require("../Edge");
+const Graph = require("../Graph.js");
+const Edge = require("../Edge.js");
 const Node = require("../Node.js");
 
 module.exports = function (){
